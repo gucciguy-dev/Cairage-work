@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/cars.css">
+<title>Cairage</title>
+</head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="car-box">
+                    <h1 class="car-title">Cairage</h1>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="advanced.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="heading-container">
+            <h1 class="car-name">Honda Accord</h1>
+            <h2>Hover for recommended mods</h2>
+        </div>
+        <main>
+            <div class="car-container">
+                <img src="Pics/Accord.png" class="car-outline" id="car" alt="Car Outline" />
+                <div class="popup" id="hood-popup">Recommended engine mod: Cold Air Intake</div>
+                <div class="popup" id="roof-popup">Recommended rear mod: Spoiler</div>
+                <div class="popup" id="front-wheel-popup">Recommended suspension mod: Aftermarket coilovers</div>
+                <div class="popup" id="rear-wheel-popup">Recommended exhaust mod: Aftermarket exhaust</div>
+            </div>  
+            <div class="bento-container">
+                <div class="bento-box car-info-card">
+                    <div class="card">
+                        <p class="car-horsepower">Horsepower: 190 hp</p>
+                        <p class="car-speed">Top Speed: 130 mph</p>
+                        <p class="car-mpg">Miles/gallon: 30 mpg</p>
+                        <p class="tank-size">Tank Size: 14.8 gal</p>
+                        <p class="wheel">Wheel Size: 17 inches</p>
+                        <p class="engine">Engine Type: i4 2.4L</p>
+                        <p class="miles">Current mileage: 198121 miles</p>
+                    </div>
+                </div>           
+                <div class="bento-box smaller-cards">
+                    <div class="card info-card">
+                        <h3>Useful guides</h3>
+                        <ul>
+                            <li><a href="https://youtube.com" target="_blank">How to wrap your car</a></li>
+                            <li><a href="https://youtube.com" target="_blank">How to install exhaust</a></li>
+                        </ul>
+                    </div>                    
+                    <div class="card info-card">
+                        <h3>Part stores</h3>
+                        <ul id="checklist">
+                            <li><a href="https://redline360.com" target="_blank">Redline360</a></li>
+                            <li><a href="https://go-apo.com" target="_blank">Auto parts outlet</a></li>
+                        </ul>
+                    </div>
+                </div>    
+                <div class="bento-box wide-card">
+                    <div class="card">
+                        <h3>Maintenance Upkeep</h3>
+                        <ul>
+                            <li>Oil Change</li>
+                            <li>Tire Rotation</li>
+                            <li>Alignment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>                   
+        </main>
+        <script src="js/script.js"></script>
+        <script src="js/checklist.js"></script>
+        <script src="js/hover.js"></script>
+        <script src="js/car.js"></script>
+</body> 
+</html>

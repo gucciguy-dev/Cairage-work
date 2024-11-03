@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/responsivestyles.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/parse/3.3.0/parse.min.js"></script>
+        <script src="js/server.js" defer></script>
+        <title>Cairage</title>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="car-container">
+                    <h1 class="car-title">Cairage</h1>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="login-start">Login</button>
+            </nav>
+        </header>
+        <div class="heading-container">
+            <h1>Your Garage</h1>
+        </div>
+        <main>
+            <div id="loginOverlay" class="overlay">
+                <div class="login-container">
+                    <h2>Login</h2>
+                    <form id="loginForm">
+                        <input type="text" id="username" placeholder="Username" required />
+                        <input type="password" id="password" placeholder="Password" required />
+                        <button type="submit" id="login-btn">Login</button>
+                        <button type="button" class="close-btn" id="closeOverlay">Close</button>
+                    </form>
+                    <p id="loginMessage"></p>
+                </div>
+            </div>
+            <div class="card-container" id="card-container">
+                <div id="carForm">
+                    <h2>Add A New Car.</h2>
+                    <label for="make-select">Select Make:</label>
+                    <select id="carMake">
+                      <option value="">Select a make</option>
+                    </select>
+                    <label for="model-select">Select Model:</label>
+                    <select id="model-select">
+                      <option value="">Select a model</option>
+                    </select>
+                    <label for="carImage" class="custom-file-upload">Upload Image</label>
+                    <input type="file" id="carImage" accept="image/*" style="display: none;" required />
+                    <button type="button" id="addCarBtn">Add</button>
+                </div>
+            <div class="car-card card">
+                <div class="card-content">
+                    <a href="Car.html" class="car-link">
+                        <img src="pics/Accord.png" alt="Accord" class="car-image">
+                        <h2 class="car-name">Honda Accord </h2>
+                    </a>
+                    <div class="car-info">
+                        <h3>Performance mod checklist</h3>
+                        <ul id="checklist">
+                            <li><input type="checkbox" id="item1"> Cold air intake</li>
+                            <li><input type="checkbox" id="item2"> Aftermarket suspension</li>
+                            <li><input type="checkbox" id="item3"> Aftermarket exhaust</li>
+                            <li><input type="checkbox" id="item4"> Performance cams</li>
+                            <li><input type="checkbox" id="item5"> Performance brakes</li>
+                            <li><input type="checkbox" id="item6"> Hondata tune</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="car-card card">
+                <div class="card-content">
+                    <a href="Car.html" class="car-link">
+                        <img src="Pics/rav4.png" alt="rav4" class="car-image">
+                        <h2 class="car-name">Toyota Rav4 Hybrid</h2>
+                    </a>
+                    <div class="car-info">
+                        <h3>Maintenance checklist</h3>
+                        <ul id="checklist">
+                            <li><input type="checkbox" id="item1"> Change oil</li>
+                            <li><input type="checkbox" id="item2"> Check brakes</li>
+                            <li><input type="checkbox" id="item3"> Measure tire pressure</li>
+                            <li><input type="checkbox" id="item4"> Clean interior</li>
+                            <li><input type="checkbox" id="item5"> Clean exterior</li>
+                            <li><input type="checkbox" id="item6"> Top off fluids</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="car-card card">
+                <div class="card-content">
+                    <a href="Car.html" class="car-link">
+                        <img src="Pics/CRZ.png" alt="CRZ" class="car-image">
+                        <h2 class="car-name">Subaru WRX</h2>
+                    </a>
+                    <div class="car-info">
+                        <h3>Maintenance checklist</h3>
+                        <ul id="checklist">
+                            <li><input type="checkbox" id="item1"> Change oil</li>
+                            <li><input type="checkbox" id="item2"> Check brakes</li>
+                            <li><input type="checkbox" id="item3"> Measure tire pressure</li>
+                            <li><input type="checkbox" id="item4"> Clean interior</li>
+                            <li><input type="checkbox" id="item5"> Clean exterior</li>
+                            <li><input type="checkbox" id="item6"> Top off fluids</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="car-card card">
+                <div class="card-content">
+                    <a href="Car.html" class="car-link">
+                        <img src="pics/s2000.png" alt="s2000" class="car-image">
+                        <h2 class="car-name">Honda S2000</h2>
+                    </a>
+                    <div class="car-info">
+                        <h3>Performance mod checklist</h3>
+                        <ul id="checklist">
+                            <li><input type="checkbox" id="item1"> Cold air intake</li>
+                            <li><input type="checkbox" id="item2"> Aftermarket suspension</li>
+                            <li><input type="checkbox" id="item3"> Aftermarket exhaust</li>
+                            <li><input type="checkbox" id="item4"> Performance cams</li>
+                            <li><input type="checkbox" id="item5"> Performance brakes</li>
+                            <li><input type="checkbox" id="item6"> Hondata tune</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="car-card card">
+                <div class="card-content">
+                    <a href="Car.html" class="car-link">
+                        <img src="Pics/corolla.png" alt="corolla" class="car-image">
+                        <h2 class="car-name">Toyota corolla</h2>
+                    </a>
+                    <div class="car-info">
+                        <h3>Maintenance checklist</h3>
+                        <ul id="checklist">
+                            <li><input type="checkbox" id="item1"> Change oil</li>
+                            <li><input type="checkbox" id="item2"> Check brakes</li>
+                            <li><input type="checkbox" id="item3"> Measure tire pressure</li>
+                            <li><input type="checkbox" id="item4"> Clean interior</li>
+                            <li><input type="checkbox" id="item5"> Clean exterior</li>
+                            <li><input type="checkbox" id="item6"> Top off fluids</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="car-card card">
+                <div class="card-content">
+                    <a href="Car.html" class="car-link">
+                        <img src="pics/RX7.png" alt="RX7" class="car-image">
+                        <h2 class="car-name">Mazda Miata</h2>
+                    </a>
+                    <div class="car-info">
+                        <h3>Performance mod checklist</h3>
+                        <ul id="checklist">
+                            <li><input type="checkbox" id="item1"> Cold air intake</li>
+                            <li><input type="checkbox" id="item2"> Aftermarket suspension</li>
+                            <li><input type="checkbox" id="item3"> Aftermarket exhaust</li>
+                            <li><input type="checkbox" id="item4"> Performance cams</li>
+                            <li><input type="checkbox" id="item5"> Performance brakes</li>
+                            <li><input type="checkbox" id="item6"> Tune</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2024 my advanced webpage</p>
+        </footer>
+        <script src="js/script.js"></script>
+        <script src="js/checklist.js"></script>
+        <script src="js/hover.js"></script>
+        <script src="js/login.js"></script>
+    </body> 
+    </html>
