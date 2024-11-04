@@ -407,6 +407,9 @@ section{
     .car-container{
         grid-template-columns: 1fr;
     }
+    main{
+        margin: 0 12px;
+    {
 }
 
 @media (max-width: 480px) {
