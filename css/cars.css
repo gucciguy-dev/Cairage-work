@@ -24,6 +24,40 @@ main {
     align-items: center;
 }
 
+.info-icon {
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    opacity: 1;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    z-index: 9;
+}
+
+.info-icon:hover {
+    opacity: 0.6;
+}
+
+#hood-icon {
+    left: 10%; 
+    top: 30%;
+}
+
+#roof-icon {
+    left: 65%;
+    top: 23%;
+}
+
+#front-wheel-icon {
+    left: 32%;
+    top: 66%;
+}
+
+#rear-wheel-icon {
+    left: 65%;
+    top: 55%;
+}
+
 .car-icon-container {
     text-align: center;
 }
@@ -293,8 +327,8 @@ header p{
 
 /* Positioning of popups relative to car parts */
 #hood-popup {
-    top: 18%;
-    left: 2%;
+    top: 6%;
+    left: -6%;
 }
 
 #roof-popup {
@@ -304,7 +338,7 @@ header p{
 
 #front-wheel-popup {
     top: 60%;
-    left: 18%;
+    left: 10%;
 }
 
 #rear-wheel-popup {
