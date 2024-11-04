@@ -1,40 +1,57 @@
-     // Areas of the car corresponding to mod suggestions
-    const areas = [
-        { id: 'hood-popup', bounds: { x: [0.07, 0.3], y: [0.25, 0.55] } },  
-        { id: 'roof-popup', bounds: { x: [0.7, 0.98], y: [0.2, 0.3] } },    
-        { id: 'front-wheel-popup', bounds: { x: [0.2, 0.6], y: [0.55, 0.85] } }, 
-        { id: 'rear-wheel-popup', bounds: { x: [0.65, 0.98], y: [0.5, 0.99] } },  
-    ];
+const car = document.getElementById('car');
+const icons = document.querySelectorAll('.info-icon');
 
-    car.addEventListener('mousemove', function (e) {
-        const rect = car.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width;
-        const y = (e.clientY - rect.top) / rect.height;
+// Areas of the car corresponding to mod suggestions
+const areas = [
+    { id: 'hood-popup', bounds: { x: [0.07, 0.3], y: [0.25, 0.55] }, icon: 'hood-icon' },
+    { id: 'roof-popup', bounds: { x: [0.7, 0.98], y: [0.2, 0.3] }, icon: 'roof-icon' },
+    { id: 'front-wheel-popup', bounds: { x: [0.2, 0.6], y: [0.55, 0.85] }, icon: 'front-wheel-icon' },
+    { id: 'rear-wheel-popup', bounds: { x: [0.65, 0.98], y: [0.5, 0.99] }, icon: 'rear-wheel-icon' },
+];
 
-        // Check which area the mouse is hovering over and show the corresponding popup
-        let popupShown = false;
-        areas.forEach(area => {
-            const { id, bounds } = area;
-            if (x >= bounds.x[0] && x <= bounds.x[1] && y >= bounds.y[0] && y <= bounds.y[1]) {
-                document.getElementById(id).style.display = 'block';
-                popupShown = true;
-            } else {
-                document.getElementById(id).style.display = 'none';
-            }
-        });
+// Function to show the correct popup
+function showPopup(areaId) {
+    areas.forEach(area => {
+        document.getElementById(area.id).style.display = area.id === areaId ? 'block' : 'none';
+    });
+}
 
-        if (!popupShown) {
-            areas.forEach(area => {
-                document.getElementById(area.id).style.display = 'none';
-            });
+// Function to hide all popups
+function hidePopups() {
+    areas.forEach(area => {
+        document.getElementById(area.id).style.display = 'none';
+    });
+}
+
+// Add mousemove event to the car image
+car.addEventListener('mousemove', function (e) {
+    const rect = car.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+
+    let popupShown = false;
+    areas.forEach(area => {
+        if (x >= area.bounds.x[0] && x <= area.bounds.x[1] && y >= area.bounds.y[0] && y <= area.bounds.y[1]) {
+            showPopup(area.id);
+            popupShown = true;
         }
     });
 
-    car.addEventListener('mouseleave', function () {
-        areas.forEach(area => {
-            document.getElementById(area.id).style.display = 'none';
-        });
+    if (!popupShown) hidePopups();
+});
+
+// Add hover events to the icons
+icons.forEach(icon => {
+    icon.addEventListener('mouseenter', () => {
+        const area = areas.find(area => area.icon === icon.id);
+        if (area) showPopup(area.id);
     });
+
+    icon.addEventListener('mouseleave', hidePopups);
+});
+
+// Hide popups when the mouse leaves the car image
+car.addEventListener('mouseleave', hidePopups);
 
 
 window.addEventListener('load', () => {
