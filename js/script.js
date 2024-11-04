@@ -28,19 +28,6 @@ document.getElementById('addCarBtn').addEventListener('click', () => {
                     </div>
                 </div>
             `;
-
-            // Add click event to the card
-            carCard.onclick = function() {
-                // Store car details for the second page
-                const carDetails = {
-                    make: make,
-                    model: model,
-                    image: e.target.result
-                };
-                localStorage.setItem('selectedCar', JSON.stringify(carDetails));
-                window.location.href = 'Car.html'; // Redirect to the second page
-            };
-
             // Append the new car card to your card container
             document.getElementById('card-container').appendChild(carCard);
         };
