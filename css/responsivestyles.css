@@ -70,7 +70,7 @@ a {
     height: 540px;
     display: grid;
     width: auto;
-    min-width: 348px;
+    min-width: 300px;
     max-width: 440px;
     position:relative;
     border-radius: 10px;
@@ -258,7 +258,7 @@ section{
     height: 540px;
     display: grid;
     width: auto;
-    min-width: 348px;
+    min-width: 300px;
     max-width: 440px;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -388,7 +388,29 @@ section{
     color: #e8f06d; /* Change car-name text color on hover */
 }
 
-@media (max-width: 480px) {
+@media (min-width:300px) {
+    .car-name {
+        font-size: 1rem;
+    }
+    #checklist li {
+        font-size: 0.7rem;
+    }
+    .card-container {
+        gap: 0;
+        padding: 0;
+    }
+    .card {
+        margin-bottom: 12px;
+    }
+    .car-card {
+        margin-right: 0;
+    }
+
+
+
+}
+
+@media (min-width: 480px) {
     .car-name {
         font-size: 1.2rem;
     }
