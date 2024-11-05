@@ -46,8 +46,8 @@ document.querySelectorAll('.car-link').forEach(link => {
       const carImage = card.querySelector('.car-image').src;
 
       // Set random values for other properties
-      const horsepower = Math.floor(Math.random() * 100) + 350;
-      const speed = Math.floor(Math.random() * 100) + 120;
+      const horsepower = Math.floor(Math.random() * 100) + 150;
+      const speed = Math.floor(Math.random() * 100) + 80;
       const mpg = Math.floor(Math.random() * (45 - 20) + 20); // No decimals
       const tankSize = (Math.random() * (16 - 11) + 11).toFixed(1); // One decimal
       const wheel = Math.floor(Math.random() * (19 - 15 + 1) + 15); // No decimals
