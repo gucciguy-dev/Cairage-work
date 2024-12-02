@@ -149,22 +149,6 @@ main {
     text-decoration: underline;
 }
 
-@media (max-width: 768px) {
-    .bento-box-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, auto);
-    }
-
-    .car-info {
-        grid-row: span 1;
-    }
-
-    .wide-info {
-        grid-column: span 1;
-    }
-}
-
-
 header {
     display: flex;
     justify-content: space-between; /* This pushes the name to the left and the tabs to the right */
@@ -222,6 +206,18 @@ nav ul li a {
 }
 
 @media (max-width: 768px) {
+    .bento-box-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+    }
+
+    .car-info {
+        grid-row: span 1;
+    }
+
+    .wide-info {
+        grid-column: span 1;
+    }
     header {
         flex-direction: column;
         align-items: center; /* Keep items centered */
@@ -241,6 +237,75 @@ nav ul li a {
         padding: 10px; /* Add spacing between links */
     }
 }
+
+@media (max-width: 600px) {
+    .bento-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .car-info-card, .wide-card, .smaller-cards {
+        grid-column: 1 / -1;
+    }
+
+    .smaller-cards {
+        flex-direction: column;
+    }
+
+    .bento-box-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+    }
+
+    .car-info {
+        grid-row: span 1;
+    }
+
+    .wide-info {
+        grid-column: span 1;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center; /* Keep items centered */
+    }
+
+    nav ul {
+        flex-direction: row; /* Keep nav items side by side */
+        flex-wrap: wrap; /* Allow them to wrap if necessary */
+        justify-content: center; /* Center nav items horizontally */
+    }
+
+    nav ul li {
+        display: inline-block;
+    }
+
+    nav ul li a {
+        padding: 10px; /* Add spacing between links */
+    }
+
+    .car-container {
+        min-width: 300px;
+    }
+
+    #hood-popup {
+        top: 10%;
+        left: 10%;
+    }
+    #roof-popup {
+        top: 5%;
+        left: 35%;
+    }
+    #front-wheel-popup {
+        top: 55%;
+        left: 12%;
+    }
+    #rear-wheel-popup {
+        top: 55%;
+        left: 70%;
+    }
+}
+
 
 h1{
     color: #f1f1f1;
@@ -344,28 +409,4 @@ header p{
 #rear-wheel-popup {
     top: 60%;
     left: 75%;
-}
-
-/* Add media queries to adjust for smaller screens */
-@media (max-width: 600px) {
-    .car-container {
-        min-width: 300px;
-    }
-
-    #hood-popup {
-        top: 10%;
-        left: 10%;
-    }
-    #roof-popup {
-        top: 5%;
-        left: 35%;
-    }
-    #front-wheel-popup {
-        top: 55%;
-        left: 12%;
-    }
-    #rear-wheel-popup {
-        top: 55%;
-        left: 70%;
-    }
 }
